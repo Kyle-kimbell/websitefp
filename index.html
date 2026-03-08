@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>North Valley Monitoring | Security & Monitoring Services</title>
+    <meta
+      name="description"
+      content="North Valley Monitoring provides dependable home and business monitoring services with fast response and local support."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Source+Sans+3:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <nav class="nav container">
+        <div class="brand">North Valley Monitoring</div>
+        <div class="nav-links">
+          <a href="#services">Services</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </nav>
+
+      <div class="hero-content container">
+        <p class="eyebrow">&nbsp;</p>
+        <h1>Protection You Can Rely On, Day and Night</h1>
+        <p>
+          Professional monitoring for homes and businesses with rapid alerts,
+          trusted support, and plans built around your property.
+        </p>
+        <a class="button" href="#contact">Request Monitoring Info</a>
+      </div>
+      <div class="hero-overlay"></div>
+    </header>
+
+    <main>
+      <section class="section container" id="services">
+        <h2>Our Services</h2>
+        <div class="cards">
+          <article class="card">
+            <h3>Farm and Irrigation Monitoring</h3>
+            <p>
+              Protect crops and irrigation systems with real-time monitoring of
+              temperature, soil mositure, water flow, and equipment status. Get
+              instant alerts when problems occur so you can respone before crop
+              damage or system failure happen.
+            </p>
+          </article>
+          <article class="card">
+            <h3>Property and Building Monitoring</h3>
+            <p>
+              Monitor building, water systems, humiduity, and HVAC equipment
+              remotely. Detect leaks, equipment failures, and envioronmental
+              issues early to prevent costly damaage and emergency repairs
+            </p>
+          </article>
+          <article class="card">
+            <h3>Equipment Runtime Monitoring</h3>
+            <p>
+              Track equipment runtime, power usage, and system health with
+              intellgent sensors and automated alerts. Prevent unexpected
+              downtime and keep critcal systems running relibly
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="about">
+        <div class="container split">
+          <div>
+            <h2>Why North Valley Monitoring</h2>
+            <p>
+              We help businessses prevent costly failures by turning physical
+              infrastructure into connected systems. Our moinitoring platform
+              combines senosor technology, real time data, and automated alerts
+              so you always know whaat happening with your equipent and your
+              enivorment
+            </p>
+          </div>
+          <ul class="checklist">
+            <li>
+              Real-time monitoring of equipment, tempuerature, humidity, and
+              crictcal systems
+            </li>
+            <li>Automated alerts when conditions move outside safe ranges</li>
+            <li>Reliable installation and ongoing support</li>
+            <li>Scalable systems for farms, facilities and growing operations</li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section container" id="contact">
+        <h2>Leave a Comment</h2>
+        <p class="section-text">
+          Send us your question or comment and we will reply as soon as
+          possible.
+        </p>
+
+        <form
+          id="contactForm"
+          class="contact-form"
+          action="https://formsubmit.co/kyle@nvmonitoring.com"
+          method="POST"
+        >
+          <input type="hidden" name="_subject" value="New message from North Valley Monitoring website" />
+          <input type="hidden" name="_captcha" value="false" />
+          <input type="hidden" name="_template" value="table" />
+
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required />
+
+          <label for="comment">Comment</label>
+          <textarea id="comment" name="comment" rows="5" required></textarea>
+
+          <button type="submit" class="button">Send Comment</button>
+          <p class="form-note" id="formNote" hidden></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <p>© <span id="year"></span> North Valley Monitoring</p>
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
