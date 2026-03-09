@@ -15,6 +15,16 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script type="text/javascript">
+      (function() {
+          // Replace "YOUR_PUBLIC_KEY" with your actual EmailJS Public Key
+          emailjs.init({
+            publicKey: "YOUR_PUBLIC_KEY",
+          });
+      })();
+    </script>
     <!-- Simple Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛡️</text></svg>">
   </head>
@@ -103,19 +113,7 @@
           possible.
         </p>
 
-        <form
-          id="contactForm"
-          class="contact-form"
-          action="https://formsubmit.co/kyle@nvmonitoring.com"
-          method="POST"
-        >
-          <input type="hidden" name="_subject" value="New message from North Valley Monitoring website" />
-          <input type="hidden" name="_captcha" value="false" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="hidden" name="_replyto" value="" id="formReplyTo" />
-          <!-- Optional: Redirect after success -->
-          <!-- <input type="hidden" name="_next" value="https://nvmonitoring.com/thanks.html"> -->
-
+        <form id="contactForm" class="contact-form">
           <label for="name">Name</label>
           <input id="name" name="name" type="text" required />
 
