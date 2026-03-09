@@ -20,8 +20,8 @@ if (form) {
       note.textContent = "Sending message...";
     }
 
-    // Replace "YOUR_SERVICE_ID" and "YOUR_TEMPLATE_ID" with your actual EmailJS IDs
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form)
+    // Replace "YOUR_TEMPLATE_ID" with your actual EmailJS IDs
+    emailjs.sendForm('service_j8jea57', 'YOUR_TEMPLATE_ID', form)
       .then(() => {
         if (button) button.textContent = "Sent!";
         if (note) {
