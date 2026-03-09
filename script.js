@@ -8,8 +8,14 @@ if (yearEl) {
 
 if (form) {
   form.addEventListener("submit", () => {
+    const button = form.querySelector('button[type="submit"]');
+    if (button) {
+      button.disabled = true;
+      button.textContent = "Sending...";
+    }
     if (note) {
-      note.textContent = "Sending your comment...";
+      note.hidden = false;
+      note.textContent = "Thank you! Sending your message now...";
     }
   });
 }
