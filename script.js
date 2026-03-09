@@ -7,7 +7,13 @@ if (yearEl) {
 }
 
 if (form) {
-  form.addEventListener("submit", () => {
+  form.addEventListener("submit", (e) => {
+    const emailInput = document.getElementById("email");
+    const replyToInput = document.getElementById("formReplyTo");
+    if (emailInput && replyToInput) {
+      replyToInput.value = emailInput.value;
+    }
+
     const button = form.querySelector('button[type="submit"]');
     if (button) {
       button.disabled = true;
