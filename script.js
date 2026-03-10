@@ -2,6 +2,13 @@ const yearEl = document.getElementById("year");
 const form = document.getElementById("contactForm");
 const note = document.getElementById("formNote");
 
+// Initialize EmailJS
+if (typeof emailjs !== 'undefined') {
+  emailjs.init({
+    publicKey: "OWGwjXh12B1as_J9",
+  });
+}
+
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
