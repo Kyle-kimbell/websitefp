@@ -36,13 +36,13 @@ if (form) {
         }
         form.reset();
       }, (error) => {
-        console.log('FAILED...', error);
+        console.error('EmailJS Error:', error);
         if (button) {
           button.disabled = false;
           button.textContent = "Try Again";
         }
         if (note) {
-          note.textContent = "Sorry, there was an error. Please try again or email kyle@nvmonitoring.com directly.";
+          note.textContent = "Error: " + (error.text || "Submission failed") + ". Please try again.";
           note.style.color = "#ff4c4c";
         }
       });
