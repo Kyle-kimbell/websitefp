@@ -7,6 +7,7 @@ if (typeof emailjs !== 'undefined') {
   emailjs.init({
     publicKey: "OWGwjXh12B1as_J9",
   });
+  console.log("EmailJS Initialized with Public Key: OWGwjXh12B1as_J9");
 }
 
 if (yearEl) {
@@ -14,6 +15,13 @@ if (yearEl) {
 }
 
 if (form) {
+  // Added diagnostic message
+  if (note) {
+    note.hidden = false;
+    note.style.color = "#4b5a69";
+    note.textContent = "Diagnostic: Contact system ready.";
+  }
+
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -24,26 +32,36 @@ if (form) {
     }
     if (note) {
       note.hidden = false;
-      note.textContent = "Sending message...";
+      note.style.color = "#1b3b52";
+      note.textContent = "Sending message to Kyle...";
     }
 
     emailjs.sendForm('service_j8jea57', 'template_w84xphk', form)
       .then(() => {
-        if (button) button.textContent = "Sent!";
+        console.log('SUCCESS!');
+        if (button) {
+           button.textContent = "Sent!";
+           button.style.backgroundColor = "#47b296";
+        }
         if (note) {
           note.textContent = "Success! Your message has been sent directly to Kyle.";
-          note.style.color = "#47b296";
+          note.style.color = "#28a745"; // Clear green
+          note.style.fontWeight = "bold";
         }
         form.reset();
       }, (error) => {
-        console.error('EmailJS Error:', error);
+        console.error('FAILED...', error);
         if (button) {
           button.disabled = false;
           button.textContent = "Try Again";
+          button.style.backgroundColor = "#ff4c4c";
         }
         if (note) {
-          note.textContent = "Error: " + (error.text || "Submission failed") + ". Please try again.";
-          note.style.color = "#ff4c4c";
+          // Show the exact error text from EmailJS
+          const errorMsg = error.text || JSON.stringify(error);
+          note.textContent = "Error: " + errorMsg;
+          note.style.color = "#d9534f"; // Clear red
+          note.style.fontWeight = "bold";
         }
       });
   });
