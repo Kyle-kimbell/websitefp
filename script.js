@@ -15,11 +15,9 @@ if (yearEl) {
 }
 
 if (form) {
-  // Added diagnostic message
+  // Hide diagnostic message (was: Diagnostic: Contact system ready.)
   if (note) {
-    note.hidden = false;
-    note.style.color = "#4b5a69";
-    note.textContent = "Diagnostic: Contact system ready.";
+    note.hidden = true;
   }
 
   form.addEventListener("submit", (e) => {
