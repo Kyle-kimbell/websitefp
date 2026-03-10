@@ -5,9 +5,9 @@ const note = document.getElementById("formNote");
 // Initialize EmailJS
 if (typeof emailjs !== 'undefined') {
   emailjs.init({
-    publicKey: "OWGwjXh12B1as_J9",
+    publicKey: "sOWGwjXh12B1as_J9",
   });
-  console.log("EmailJS Initialized with Public Key: OWGwjXh12B1as_J9");
+  console.log("EmailJS Initialized with Public Key: sOWGwjXh12B1as_J9");
 }
 
 if (yearEl) {
