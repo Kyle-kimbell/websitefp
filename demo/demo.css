@@ -1,0 +1,136 @@
+:root {
+  --navy: #0b2030;
+  --steel: #17364b;
+  --signal: #ff8c42;
+  --ink: #17222c;
+  --white: #ffffff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Source Sans 3", sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at top right, rgba(255, 140, 66, 0.18), transparent 28%),
+    linear-gradient(160deg, #eff5fa, #d9e6f0 60%, #eff5fa);
+}
+
+.demo-shell {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.demo-card {
+  width: min(760px, 100%);
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(23, 54, 75, 0.08);
+  border-radius: 28px;
+  box-shadow: 0 20px 60px rgba(11, 32, 48, 0.14);
+  padding: 32px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 0.75rem;
+  color: #4b6577;
+}
+
+h1 {
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  line-height: 1;
+  color: var(--navy);
+}
+
+.lede {
+  margin: 14px 0 28px;
+  max-width: 40rem;
+  font-size: 1.05rem;
+  color: #425564;
+}
+
+.reading-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.reading-panel {
+  background: linear-gradient(160deg, rgba(11, 32, 48, 0.98), rgba(23, 54, 75, 0.95));
+  color: var(--white);
+  border-radius: 22px;
+  padding: 24px;
+}
+
+.panel-label,
+.panel-meta {
+  display: block;
+}
+
+.panel-label {
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.panel-value {
+  display: block;
+  margin: 14px 0 10px;
+  font-size: clamp(2rem, 7vw, 3.4rem);
+  line-height: 1;
+}
+
+.panel-meta {
+  color: rgba(255, 255, 255, 0.72);
+}
+
+.demo-actions {
+  margin-top: 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.button {
+  appearance: none;
+  border: 0;
+  border-radius: 999px;
+  background: var(--signal);
+  color: #11212c;
+  font: inherit;
+  font-weight: 700;
+  padding: 12px 22px;
+  cursor: pointer;
+}
+
+.text-link {
+  color: var(--steel);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.message {
+  margin: 18px 0 0;
+  min-height: 1.5rem;
+  color: #516473;
+}
+
+.message.error {
+  color: #9a2f2f;
+}
+
+.message.ok {
+  color: #256046;
+}
