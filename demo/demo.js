@@ -5,7 +5,7 @@ const message = document.getElementById("message");
 const refreshButton = document.getElementById("refreshButton");
 
 const SENSOR_ENDPOINT = window.NVM_SENSOR_ENDPOINT || "";
-const POLL_INTERVAL_MS = 15000;
+const POLL_INTERVAL_MS = 60000;
 
 refreshButton.addEventListener("click", loadReading);
 
