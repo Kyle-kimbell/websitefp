@@ -17,19 +17,19 @@
         <h1>Live Sensor Demo</h1>
         <p class="lede">
           This page is meant to show a farmer the latest reading from the field,
-          from anywhere.
+          from anywhere through a station-mode ESP32 feed.
         </p>
 
         <div class="reading-grid">
           <article class="reading-panel">
             <span class="panel-label">Distance</span>
             <strong class="panel-value" id="distanceValue">--</strong>
-            <span class="panel-meta">Ultrasonic probe</span>
+            <span class="panel-meta" id="timestampValue">Last reading: none yet</span>
           </article>
           <article class="reading-panel">
             <span class="panel-label">Status</span>
             <strong class="panel-value" id="statusValue">Waiting</strong>
-            <span class="panel-meta" id="updatedValue">No reading yet</span>
+            <span class="panel-meta" id="updatedValue">Waiting for a cloud reading</span>
           </article>
         </div>
 
@@ -39,7 +39,7 @@
         </div>
 
         <p class="message" id="message">
-          Configure your public sensor endpoint in <code>demo/config.js</code>.
+          Configure your public PLC-style sensor endpoint in <code>demo/config.js</code>.
         </p>
       </section>
     </main>
