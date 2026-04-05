@@ -207,12 +207,6 @@ h1 {
   display: inline-block;
 }
 
-.button-secondary {
-  background: transparent;
-  color: var(--white);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-}
-
 .contact-form {
   display: grid;
   gap: 10px;
