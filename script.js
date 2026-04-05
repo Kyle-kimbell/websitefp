@@ -23,18 +23,34 @@ if (form) {
   form.addEventListener("submit", (e) => {
     e.preventDefault();
 
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const projectDetails = form.comment.value.trim();
     const button = form.querySelector('button[type="submit"]');
+
     if (button) {
       button.disabled = true;
       button.textContent = "Sending...";
     }
+
     if (note) {
       note.hidden = false;
       note.style.color = "#1b3b52";
       note.textContent = "Sending message to Kyle...";
     }
 
-    emailjs.sendForm('service_j8jea57', 'template_w84xphk', form)
+    const templateParams = {
+      name,
+      email,
+      comment: projectDetails,
+      project_details: projectDetails,
+      from_name: name,
+      from_email: email,
+      reply_to: email,
+      message: projectDetails,
+    };
+
+    emailjs.send('service_j8jea57', 'template_w84xphk', templateParams)
       .then(() => {
         console.log('SUCCESS!');
         if (button) {
