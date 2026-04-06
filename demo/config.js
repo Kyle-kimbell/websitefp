@@ -1,3 +1,3 @@
-window.NVM_SENSOR_ENDPOINT =
-  "https://nvmonitoring-sensor-gateway.kimbell-kyle.workers.dev/api/reading";
+window.NVM_SENSOR_ENDPOINT = "REPLACE_ME_WITH_YOUR_READING_ENDPOINT";
 window.NVM_SENSOR_STALE_MS = 90000;
+window.NVM_DEMO_ACCESS_CODE = "northvalley-demo";

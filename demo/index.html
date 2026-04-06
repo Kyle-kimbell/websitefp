@@ -6,7 +6,7 @@
     <title>North Valley Monitoring Demo</title>
     <meta
       name="description"
-      content="Live North Valley Monitoring demo powered by a cloud-connected ESP32 ultrasonic sensor."
+      content="Live North Valley Monitoring demo powered by a cloud-connected PLC counter feed."
     />
     <link rel="stylesheet" href="demo.css" />
   </head>
@@ -16,14 +16,14 @@
         <p class="eyebrow">North Valley Monitoring</p>
         <h1>Live Sensor Demo</h1>
         <p class="lede">
-          This page is meant to show a farmer the latest reading from the field,
-          from anywhere through a station-mode ESP32 feed.
+          This page is meant to show the latest PLC counter reading from the
+          field, from anywhere through a secure cloud endpoint.
         </p>
 
         <div class="reading-grid">
           <article class="reading-panel">
-            <span class="panel-label">Distance</span>
-            <strong class="panel-value" id="distanceValue">--</strong>
+            <span class="panel-label">Counter</span>
+            <strong class="panel-value" id="counterValue">--</strong>
             <span class="panel-meta" id="timestampValue">Last reading: none yet</span>
           </article>
           <article class="reading-panel">
@@ -35,6 +35,7 @@
 
         <div class="demo-actions">
           <button class="button" id="refreshButton" type="button">Refresh</button>
+          <button class="button button-secondary" id="logoutButton" type="button">Log Out</button>
           <a class="text-link" href="/">Back to site</a>
         </div>
 

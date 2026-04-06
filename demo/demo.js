@@ -1,16 +1,20 @@
-const distanceValue = document.getElementById("distanceValue");
+const counterValue = document.getElementById("counterValue");
 const timestampValue = document.getElementById("timestampValue");
 const statusValue = document.getElementById("statusValue");
 const updatedValue = document.getElementById("updatedValue");
 const message = document.getElementById("message");
 const refreshButton = document.getElementById("refreshButton");
+const logoutButton = document.getElementById("logoutButton");
 
 const SENSOR_ENDPOINT = window.NVM_SENSOR_ENDPOINT || "";
 const SENSOR_STALE_MS = Number(window.NVM_SENSOR_STALE_MS || 90000);
+const DEMO_ACCESS_CODE = String(window.NVM_DEMO_ACCESS_CODE || "");
 const POLL_INTERVAL_MS = 60000;
 let lastGoodReading = null;
 
+enforceDemoSession();
 refreshButton.addEventListener("click", loadReading);
+logoutButton.addEventListener("click", logoutDemoSession);
 
 if (!SENSOR_ENDPOINT || SENSOR_ENDPOINT.includes("REPLACE_ME")) {
   statusValue.textContent = "Setup Needed";
@@ -42,12 +46,12 @@ async function loadReading() {
     const payload = await response.json();
     const reading = normalizeReading(payload);
 
-    if (reading.distance == null) {
-      throw new Error("distance reading missing");
+    if (reading.counter == null) {
+      throw new Error("counter reading missing");
     }
 
     lastGoodReading = reading;
-    distanceValue.textContent = `${reading.distance.toFixed(1)} cm`;
+    counterValue.textContent = formatCounter(reading.counter);
     statusValue.textContent = reading.isStale ? "Stale" : "Live";
     timestampValue.textContent = formatTimestamp(reading.timestamp);
     updatedValue.textContent = reading.isStale
@@ -56,12 +60,12 @@ async function loadReading() {
     setMessage(
       reading.isStale
         ? "Sensor link is responding, but the last PLC-style reading is older than expected."
-        : "Live reading loaded from the ESP32 station-mode publish path.",
+        : "Live reading loaded from the cloud PLC publish path.",
       reading.isStale ? "error" : "ok"
     );
   } catch (error) {
     if (lastGoodReading) {
-      distanceValue.textContent = `${lastGoodReading.distance.toFixed(1)} cm`;
+      counterValue.textContent = formatCounter(lastGoodReading.counter);
       timestampValue.textContent = formatTimestamp(lastGoodReading.timestamp);
       statusValue.textContent = "Stale";
       updatedValue.textContent = "Showing last successful PLC scan";
@@ -75,6 +79,23 @@ async function loadReading() {
     refreshButton.disabled = false;
     refreshButton.textContent = "Refresh";
   }
+}
+
+function enforceDemoSession() {
+  const sessionCode = window.sessionStorage.getItem("nvm-demo-auth") || "";
+
+  if (!DEMO_ACCESS_CODE) {
+    return;
+  }
+
+  if (sessionCode !== DEMO_ACCESS_CODE) {
+    window.location.replace("/login/");
+  }
+}
+
+function logoutDemoSession() {
+  window.sessionStorage.removeItem("nvm-demo-auth");
+  window.location.replace("/login/");
 }
 
 function normalizeReading(payload) {
@@ -99,18 +120,21 @@ function normalizeReading(payload) {
       : null;
 
   return {
-    distance: asNumber(
-      source.distance_cm ??
-        source.distanceCm ??
-        source.distance ??
-        source.ultrasonic_cm ??
-        source.level_cm ??
+    counter: asNumber(
+      source.counter ??
+        source.count ??
+        source.value ??
+        source.counter_value ??
         null
     ),
     timestamp,
     ageMs,
     isStale: ageMs != null && ageMs > SENSOR_STALE_MS,
   };
+}
+
+function formatCounter(counter) {
+  return Number.isInteger(counter) ? `${counter}` : `${counter.toFixed(2)}`;
 }
 
 function asNumber(value) {

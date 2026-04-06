@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Demo Login | North Valley Monitoring</title>
+    <meta
+      name="description"
+      content="Enter the North Valley Monitoring demo access code to view the customer demo."
+    />
+    <link rel="stylesheet" href="login.css" />
+  </head>
+  <body>
+    <main class="login-shell">
+      <section class="login-card">
+        <p class="eyebrow">North Valley Monitoring</p>
+        <h1>Customer Demo Access</h1>
+        <p class="lede">
+          Enter the demo access code to continue to the customer-facing landing page.
+        </p>
+
+        <form id="loginForm" class="login-form">
+          <label for="accessCode">Access code</label>
+          <input
+            id="accessCode"
+            name="accessCode"
+            type="password"
+            autocomplete="current-password"
+            required
+          />
+          <button class="button" type="submit">Enter Demo</button>
+        </form>
+
+        <p class="message" id="message">
+          This is a static access gate for demo flow. Replace with real auth before paid customer use.
+        </p>
+
+        <div class="login-actions">
+          <a class="text-link" href="/">Back to site</a>
+        </div>
+      </section>
+    </main>
+    <script src="../demo/config.js"></script>
+    <script src="login.js"></script>
+  </body>
+</html>
