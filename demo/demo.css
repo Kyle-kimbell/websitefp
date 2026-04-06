@@ -4,6 +4,7 @@
   --signal: #ff8c42;
   --ink: #17222c;
   --white: #ffffff;
+  --mist: #eff5fa;
 }
 
 * {
@@ -20,20 +21,34 @@ body {
     linear-gradient(160deg, #eff5fa, #d9e6f0 60%, #eff5fa);
 }
 
-.demo-shell {
+.wiki-shell {
   min-height: 100vh;
-  display: grid;
-  place-items: center;
   padding: 24px;
 }
 
-.demo-card {
-  width: min(760px, 100%);
-  background: rgba(255, 255, 255, 0.92);
+.wiki-card {
+  width: min(1100px, 100%);
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.94);
   border: 1px solid rgba(23, 54, 75, 0.08);
   border-radius: 28px;
   box-shadow: 0 20px 60px rgba(11, 32, 48, 0.14);
   padding: 32px;
+}
+
+.wiki-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.wiki-actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
 .eyebrow {
@@ -44,32 +59,48 @@ body {
   color: #4b6577;
 }
 
-h1 {
+h1,
+h2 {
   margin: 0;
   font-family: "Oswald", sans-serif;
-  font-size: clamp(2rem, 6vw, 3.4rem);
-  line-height: 1;
   color: var(--navy);
 }
 
+h1 {
+  font-size: clamp(2rem, 6vw, 3.4rem);
+  line-height: 1;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 14px;
+}
+
 .lede {
-  margin: 14px 0 28px;
-  max-width: 40rem;
+  margin: 14px 0 0;
+  max-width: 42rem;
   font-size: 1.05rem;
   color: #425564;
 }
 
-.reading-grid {
+.wiki-intro {
+  margin-top: 28px;
   display: grid;
   gap: 16px;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
 }
 
-.reading-panel {
-  background: linear-gradient(160deg, rgba(11, 32, 48, 0.98), rgba(23, 54, 75, 0.95));
-  color: var(--white);
+.wiki-panel,
+.wiki-section {
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(239, 245, 250, 0.96));
+  border: 1px solid rgba(23, 54, 75, 0.08);
   border-radius: 22px;
   padding: 24px;
+}
+
+.wiki-panel-hero {
+  background: linear-gradient(160deg, rgba(11, 32, 48, 0.98), rgba(23, 54, 75, 0.95));
+  color: var(--white);
 }
 
 .panel-label,
@@ -81,26 +112,57 @@ h1 {
   font-size: 0.78rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.72);
+  color: inherit;
+  opacity: 0.72;
 }
 
 .panel-value {
   display: block;
   margin: 14px 0 10px;
-  font-size: clamp(2rem, 7vw, 3.4rem);
-  line-height: 1;
+  font-size: clamp(2rem, 5vw, 3rem);
+  line-height: 1.05;
+}
+
+.panel-value-small {
+  font-size: 1.4rem;
 }
 
 .panel-meta {
-  color: rgba(255, 255, 255, 0.72);
+  color: inherit;
+  opacity: 0.78;
 }
 
-.demo-actions {
-  margin-top: 24px;
-  display: flex;
-  align-items: center;
+.wiki-grid {
+  margin-top: 18px;
+  display: grid;
   gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.wiki-section-full {
+  margin-top: 18px;
+}
+
+.wiki-list {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 10px;
+  color: #425564;
+}
+
+.tag-list {
+  display: flex;
   flex-wrap: wrap;
+  gap: 10px;
+}
+
+.tag-list span {
+  border-radius: 999px;
+  background: rgba(23, 54, 75, 0.1);
+  color: var(--steel);
+  font-weight: 700;
+  padding: 10px 14px;
 }
 
 .button {
@@ -127,15 +189,13 @@ h1 {
 }
 
 .message {
-  margin: 18px 0 0;
-  min-height: 1.5rem;
+  margin: 0;
   color: #516473;
+  line-height: 1.6;
 }
 
-.message.error {
-  color: #9a2f2f;
-}
-
-.message.ok {
-  color: #256046;
+@media (max-width: 640px) {
+  .wiki-card {
+    padding: 22px;
+  }
 }
