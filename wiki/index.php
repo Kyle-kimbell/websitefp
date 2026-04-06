@@ -1,3 +1,10 @@
+<?php
+
+declare(strict_types=1);
+
+require_once __DIR__ . '/../includes/auth.php';
+require_login();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -8,7 +15,7 @@
       name="description"
       content="Protected North Valley Monitoring wiki for customer documentation, system notes, and service references."
     />
-    <link rel="stylesheet" href="wiki.css?v=1" />
+    <link rel="stylesheet" href="wiki.css?v=2" />
   </head>
   <body>
     <main class="wiki-shell">
@@ -23,7 +30,7 @@
             </p>
           </div>
           <div class="wiki-actions">
-            <button class="button button-secondary" id="logoutButton" type="button">Log Out</button>
+            <a class="button button-secondary" href="/logout.php">Log Out</a>
             <a class="text-link" href="/">Back to site</a>
           </div>
         </div>
@@ -85,7 +92,5 @@
         </section>
       </section>
     </main>
-    <script src="../demo/config.js"></script>
-    <script src="wiki.js?v=1"></script>
   </body>
 </html>

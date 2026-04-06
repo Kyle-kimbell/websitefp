@@ -1,3 +1,10 @@
+<?php
+
+declare(strict_types=1);
+
+require_once __DIR__ . '/../../includes/auth.php';
+require_login();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -22,7 +29,7 @@
             </p>
           </div>
           <div class="wiki-actions">
-            <button class="button button-secondary" id="logoutButton" type="button">Log Out</button>
+            <a class="button button-secondary" href="/logout.php">Log Out</a>
             <a class="text-link" href="/wiki/">Back to wiki</a>
           </div>
         </div>
@@ -51,7 +58,5 @@
         </section>
       </section>
     </main>
-    <script src="../../demo/config.js"></script>
-    <script src="../wiki.js?v=2"></script>
   </body>
 </html>
