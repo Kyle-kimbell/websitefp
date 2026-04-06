@@ -16,14 +16,23 @@
         <p class="eyebrow">North Valley Monitoring</p>
         <h1>Customer Demo Access</h1>
         <p class="lede">
-          Enter the demo access code to continue to the customer-facing landing page.
+          Sign in to continue to the customer-facing live demo.
         </p>
 
         <form id="loginForm" class="login-form">
-          <label for="accessCode">Access code</label>
+          <label for="email">Email</label>
           <input
-            id="accessCode"
-            name="accessCode"
+            id="email"
+            name="email"
+            type="email"
+            autocomplete="username"
+            required
+          />
+
+          <label for="password">Password</label>
+          <input
+            id="password"
+            name="password"
             type="password"
             autocomplete="current-password"
             required
@@ -32,7 +41,7 @@
         </form>
 
         <p class="message" id="message">
-          This is a static access gate for demo flow. Replace with real auth before paid customer use.
+          This is a browser-side demo login flow. Replace it with server-side auth before paid customer use.
         </p>
 
         <div class="login-actions">

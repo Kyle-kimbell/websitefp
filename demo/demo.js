@@ -8,7 +8,6 @@ const logoutButton = document.getElementById("logoutButton");
 
 const SENSOR_ENDPOINT = window.NVM_SENSOR_ENDPOINT || "";
 const SENSOR_STALE_MS = Number(window.NVM_SENSOR_STALE_MS || 90000);
-const DEMO_ACCESS_CODE = String(window.NVM_DEMO_ACCESS_CODE || "");
 const POLL_INTERVAL_MS = 60000;
 let lastGoodReading = null;
 
@@ -82,14 +81,23 @@ async function loadReading() {
 }
 
 function enforceDemoSession() {
-  const sessionCode = window.sessionStorage.getItem("nvm-demo-auth") || "";
+  const sessionValue = window.sessionStorage.getItem("nvm-demo-auth");
 
-  if (!DEMO_ACCESS_CODE) {
+  if (!sessionValue) {
+    window.location.replace("/login/?next=/demo/");
     return;
   }
 
-  if (sessionCode !== DEMO_ACCESS_CODE) {
-    window.location.replace("/login/");
+  try {
+    const session = JSON.parse(sessionValue);
+    const expiresAt = Number(session.expiresAt || 0);
+
+    if (!session.email || !expiresAt || expiresAt < Date.now()) {
+      throw new Error("session expired");
+    }
+  } catch {
+    window.sessionStorage.removeItem("nvm-demo-auth");
+    window.location.replace("/login/?next=/demo/");
   }
 }
 
