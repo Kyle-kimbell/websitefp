@@ -61,7 +61,7 @@ loginForm.addEventListener("submit", (event) => {
 
 function sanitizeNextPath(value) {
   if (!value || !value.startsWith("/")) {
-    return "/demo/";
+    return "/wiki/";
   }
 
   return value;
