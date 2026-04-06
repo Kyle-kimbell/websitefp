@@ -150,6 +150,42 @@ h2 {
   color: #425564;
 }
 
+.section-kicker {
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  color: #5a7283;
+}
+
+.section-copy {
+  margin: 0 0 18px;
+  color: #425564;
+  line-height: 1.6;
+}
+
+.inventory-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.inventory-card {
+  border-radius: 18px;
+  background: rgba(23, 54, 75, 0.05);
+  padding: 18px;
+}
+
+.inventory-label {
+  display: block;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.76rem;
+  color: var(--steel);
+  font-weight: 700;
+}
+
 .tag-list {
   display: flex;
   flex-wrap: wrap;
