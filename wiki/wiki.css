@@ -102,6 +102,28 @@ h2 {
   color: var(--white);
 }
 
+.wiki-link-card {
+  display: block;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(239, 245, 250, 0.96));
+  border: 1px solid rgba(23, 54, 75, 0.08);
+  border-radius: 22px;
+  padding: 24px;
+  text-decoration: none;
+  transition: transform 140ms ease, box-shadow 140ms ease, border-color 140ms ease;
+}
+
+.wiki-link-card:hover {
+  transform: translateY(-2px);
+  border-color: rgba(23, 54, 75, 0.18);
+  box-shadow: 0 14px 32px rgba(11, 32, 48, 0.08);
+}
+
+.wiki-link-card h2,
+.wiki-link-card .section-kicker,
+.wiki-link-card .section-copy {
+  text-decoration: none;
+}
+
 .panel-label,
 .panel-meta {
   display: block;
@@ -182,6 +204,14 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 0.76rem;
+  color: var(--steel);
+  font-weight: 700;
+}
+
+.card-link-text {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 10px;
   color: var(--steel);
   font-weight: 700;
 }
