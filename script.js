@@ -36,7 +36,7 @@ if (form) {
     if (note) {
       note.hidden = false;
       note.style.color = "#1b3b52";
-      note.textContent = "Sending message to Kyle...";
+      note.textContent = "Sending your request...";
     }
 
     const templateParams = {
@@ -58,7 +58,7 @@ if (form) {
            button.style.backgroundColor = "#47b296";
         }
         if (note) {
-          note.textContent = "Success! Your message has been sent directly to Kyle.";
+          note.textContent = "Success. Your request has been sent.";
           note.style.color = "#28a745"; // Clear green
           note.style.fontWeight = "bold";
         }
