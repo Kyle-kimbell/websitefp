@@ -149,7 +149,6 @@ h3 {
 .eyebrow,
 .kicker,
 .panel-label,
-.signal-label,
 .note-label,
 .step span,
 .card-index {
@@ -252,7 +251,6 @@ h3 {
   background: rgba(85, 255, 136, 0.08);
 }
 
-.signal-grid,
 .cards,
 .steps,
 .contact-layout,
@@ -261,12 +259,6 @@ h3 {
   gap: 20px;
 }
 
-.signal-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  margin-top: 34px;
-}
-
-.signal-card,
 .hero-panel,
 .card,
 .step,
@@ -281,11 +273,6 @@ h3 {
   box-shadow: var(--shadow);
 }
 
-.signal-card {
-  padding: 18px 20px;
-}
-
-.signal-label,
 .note-label {
   display: block;
   margin-bottom: 8px;
@@ -293,11 +280,6 @@ h3 {
   font-size: 0.72rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-}
-
-.signal-card strong {
-  font-size: 1rem;
-  font-weight: 600;
 }
 
 .hero-panel,
@@ -604,10 +586,6 @@ h3 {
 
   .cards {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .signal-grid {
-    grid-template-columns: 1fr;
   }
 
   h1 {
