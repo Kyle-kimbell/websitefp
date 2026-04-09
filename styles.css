@@ -148,7 +148,6 @@ h3 {
 
 .eyebrow,
 .kicker,
-.panel-label,
 .note-label,
 .step span,
 .card-index {
@@ -259,7 +258,6 @@ h3 {
   gap: 20px;
 }
 
-.hero-panel,
 .card,
 .step,
 .about-panel,
@@ -282,7 +280,6 @@ h3 {
   text-transform: uppercase;
 }
 
-.hero-panel,
 .card,
 .step,
 .about-panel,
@@ -291,70 +288,6 @@ h3 {
 .contact-form,
 .process-note {
   padding: 28px;
-}
-
-.hero-panel {
-  position: relative;
-}
-
-.terminal-top {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 22px;
-}
-
-.terminal-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: rgba(143, 255, 170, 0.42);
-  box-shadow: 0 0 10px rgba(85, 255, 136, 0.35);
-}
-
-.panel-label {
-  margin: 0 0 0 8px;
-  color: var(--accent-strong);
-  font-size: 0.78rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-}
-
-.terminal-screen {
-  margin-bottom: 22px;
-  border: 1px solid rgba(85, 255, 136, 0.12);
-  border-radius: 18px;
-  padding: 18px;
-  background:
-    linear-gradient(180deg, rgba(85, 255, 136, 0.04), rgba(85, 255, 136, 0.01)),
-    rgba(0, 0, 0, 0.18);
-}
-
-.terminal-screen p {
-  margin: 0 0 10px;
-  color: var(--muted);
-  font-family: "IBM Plex Mono", monospace;
-  font-size: 0.9rem;
-  line-height: 1.7;
-}
-
-.terminal-screen p:last-child {
-  margin-bottom: 0;
-}
-
-.terminal-screen span {
-  color: var(--accent-strong);
-}
-
-.hero-list {
-  margin: 0;
-  padding-left: 18px;
-  color: rgba(213, 255, 216, 0.92);
-  line-height: 1.9;
-}
-
-.panel-note {
-  margin: 18px 0 0;
 }
 
 .section {
@@ -617,7 +550,6 @@ h3 {
     padding: 78px 0;
   }
 
-  .hero-panel,
   .card,
   .step,
   .about-panel,
