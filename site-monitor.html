@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Site Uptime Monitoring | North Valley Monitoring</title>
+    <meta
+      name="description"
+      content="North Valley Monitoring provides lightweight uptime monitoring for farm websites, dashboards, routers, and remote systems that growers depend on."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <div class="hero-backdrop"></div>
+      <nav class="nav container">
+        <a class="brand" href="index.html">North Valley Monitoring</a>
+        <div class="nav-links">
+          <a href="index.html#services">Services</a>
+          <a href="index.html#process">Process</a>
+          <a href="index.html#contact">Contact</a>
+        </div>
+      </nav>
+
+      <div class="hero-content container">
+        <div class="hero-copy">
+          <p class="eyebrow">Site Monitor</p>
+          <h1>Know When a Critical System Drops Offline</h1>
+          <p class="lead">
+            Lightweight monitoring for farm websites, customer dashboards, routers, 
+            cameras, irrigation portals, and remote systems. We check the site on a 
+            schedule, log response time, and send alerts when repeated failures show 
+            that something needs attention before crews lose time chasing the issue.
+          </p>
+          <div class="hero-actions">
+            <a class="button" href="#packages">View Packages</a>
+            <a class="button button-secondary" href="index.html#contact">Ask About Monitoring</a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="section container" id="what">
+        <div class="section-heading">
+          <p class="kicker">What It Monitors</p>
+          <h2>A Practical Check on the Systems Farms Depend On</h2>
+          <p class="section-text">
+            This service does not require custom farm hardware on day one. It monitors 
+            whether an online system is reachable and creates a record of outages, 
+            slow response times, and recoveries for the tools that support irrigation, 
+            field visibility, customer access, and daily operations.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <p class="card-index">01</p>
+            <h3>Website Availability</h3>
+            <p>
+              Check whether a business website or farm portal returns a healthy 
+              response before customers or employees report that it is down.
+            </p>
+          </article>
+          <article class="card">
+            <p class="card-index">02</p>
+            <h3>Dashboard Reachability</h3>
+            <p>
+              Monitor cloud dashboards, camera pages, irrigation portals, or vendor 
+              systems that the operation depends on during the workday, especially 
+              when no one is sitting in front of them.
+            </p>
+          </article>
+          <article class="card">
+            <p class="card-index">03</p>
+            <h3>Uptime Reports</h3>
+            <p>
+              Export a simple status report showing checks, failures, response time, 
+              and recovery events. Useful for owners who want a record they can act 
+              on instead of another mystery outage.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="packages">
+        <div class="container split">
+          <div>
+            <p class="kicker">Packages</p>
+            <h2>Simple Monthly Monitoring</h2>
+            <p class="section-text">
+              Start with one public URL or dashboard endpoint. Add more systems as the 
+              customer sees value.
+            </p>
+          </div>
+          <div class="steps">
+            <article class="step">
+              <span>Starter</span>
+              <h3>$19/month</h3>
+              <p>One monitored URL, one-minute checks, monthly uptime report.</p>
+            </article>
+            <article class="step">
+              <span>Operator</span>
+              <h3>$49/month</h3>
+              <p>Up to five monitored URLs, alerting, monthly report, basic troubleshooting notes.</p>
+            </article>
+            <article class="step">
+              <span>Farm Network</span>
+              <h3>$99/month</h3>
+              <p>Up to fifteen monitored systems with priority review and outage history.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section container" id="static">
+        <div class="section-heading">
+          <p class="kicker">Static Site Fit</p>
+          <h2>How This Works With GitHub Pages</h2>
+          <p class="section-text">
+            GitHub Pages hosts the public page. The actual checks run from a small 
+            monitor process and export an HTML report that can be published as a 
+            static status page. If a live dashboard is needed later, the next step is 
+            a tiny API on Cloudflare Workers or another low-cost backend.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer-content">
+        <p>© <span id="year"></span> North Valley Monitoring</p>
+        <a href="#top">Back to top</a>
+      </div>
+    </footer>
+
+    <script src="script.js?v=5"></script>
+  </body>
+</html>
