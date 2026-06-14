@@ -69,15 +69,43 @@ a {
   display: grid;
   min-height: 100vh;
   place-items: center;
-  padding: 40px;
+  padding: 64px 40px;
+  background:
+    radial-gradient(circle at 20% 18%, rgba(85, 255, 136, 0.16), transparent 28%),
+    linear-gradient(135deg, rgba(2, 5, 3, 0.96), rgba(4, 14, 8, 0.94));
 }
 
-.mission-page p {
-  max-width: 900px;
+.mission-statement {
+  width: min(980px, 100%);
+  padding: clamp(40px, 6vw, 76px);
+  border: 1px solid var(--line-strong);
+  border-radius: var(--radius);
+  background: linear-gradient(145deg, rgba(5, 15, 9, 0.94), rgba(7, 17, 11, 0.82));
+  box-shadow: var(--shadow), inset 0 1px 0 rgba(213, 255, 216, 0.1);
+}
+
+.mission-statement p {
+  max-width: 820px;
   margin: 0;
   color: var(--ink);
-  font-size: clamp(1.35rem, 3vw, 2.45rem);
-  line-height: 1.35;
+  font-size: clamp(1.45rem, 2.2vw, 2.25rem);
+  line-height: 1.45;
+}
+
+.mission-statement a {
+  display: inline-flex;
+  margin-top: 34px;
+  color: var(--accent-strong);
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 0.92rem;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.mission-statement a:hover,
+.mission-statement a:focus-visible {
+  color: var(--ink);
 }
 
 .container {
