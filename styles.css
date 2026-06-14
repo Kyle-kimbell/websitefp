@@ -150,6 +150,14 @@ a {
   line-height: 1.6;
 }
 
+.story-page {
+  margin: 48px auto 0;
+}
+
+.story-page p + p {
+  margin-top: 20px;
+}
+
 .container {
   width: min(1160px, calc(100% - 40px));
   margin: 0 auto;
