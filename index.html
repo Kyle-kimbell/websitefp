@@ -20,8 +20,8 @@
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2218%22 fill=%22%230f1b2d%22/><text x=%2250%22 y=%2264%22 text-anchor=%22middle%22 font-size=%2252%22 fill=%22%23f0f4f8%22 font-family=%22Arial%22>%E2%8F%9A</text></svg>"
     />
   </head>
-  <body>
-    <header class="hero" id="top">
+  <body class="home-simple">
+    <header class="hero simple-hero" id="top">
       <div class="hero-backdrop"></div>
       <nav class="nav container">
         <a class="brand" href="#top">North Valley Monitoring</a>
@@ -32,140 +32,28 @@
           <a href="#contact">Contact</a>
         </div>
       </nav>
-
-      <div class="hero-content container">
-        <div class="hero-copy">
-          <p class="eyebrow">Chico, California</p>
-          <h1>Custom smart farm systems.</h1>
-          <p class="lead">
-            North Valley Monitoring builds practical monitoring systems for farms
-            that need better visibility into water, equipment, energy use, and
-            remote sites. We design around the operation you already run, then
-            install the sensors, alerts, and dashboards that make it easier to
-            see what is happening.
-          </p>
-        </div>
-      </div>
     </header>
 
-    <main>
-      <section class="section container">
-        <div class="section-heading">
-          <p class="kicker">What We Build</p>
-          <h2>Custom Internet of Things farm and garden report systems.</h2>
-          <p class="section-text">
-            We connect field hardware, internet-connected devices, and simple
-            dashboards so growers can track the systems that keep the farm moving.
-          </p>
-        </div>
-
-        <div class="cards">
-          <article class="card">
-            <p class="card-index">01</p>
-            <h3>Irrigation visibility</h3>
-            <p>
-              Monitor pumps, tanks, flow, pressure, water levels, and field
-              conditions so irrigation issues are easier to catch.
-            </p>
-          </article>
-          <article class="card">
-            <p class="card-index">02</p>
-            <h3>Equipment runtime</h3>
-            <p>
-              Track when fridges, pumps, fans, controllers, and other equipment
-              are running, idle, offline, or acting outside normal patterns.
-            </p>
-          </article>
-          <article class="card">
-            <p class="card-index">03</p>
-            <h3>Alerts and dashboards</h3>
-            <p>
-              Send plain alerts and status views for the people who need them,
-              whether they are in the shop, field, office, or truck.
-            </p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section section-alt">
-        <div class="container split">
-          <div>
-            <p class="kicker">How It Works</p>
-            <h2>Built around your farm, not a generic software package.</h2>
-            <p class="section-text">
-              Every farm has different equipment, weak spots, and routines. We
-              start with the problem, choose the right sensors, and build a system
-              that gives useful operating data without adding more busywork.
-            </p>
-          </div>
-          <div class="steps">
-            <article class="step">
-              <span>Step 1</span>
-              <h3>Walk the operation</h3>
-              <p>Find the systems that need better visibility and define what success looks like.</p>
-            </article>
-            <article class="step">
-              <span>Step 2</span>
-              <h3>Install the monitoring</h3>
-              <p>Add the sensors, smart plugs, gateways, dashboards, and alerts that fit the job.</p>
-            </article>
-            <article class="step">
-              <span>Step 3</span>
-              <h3>Keep it useful</h3>
-              <p>Review the data, adjust thresholds, and maintain the system as farm needs change.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
+    <main class="simple-main">
       <section class="section container" id="contact">
-        <div class="section-heading">
-          <p class="kicker">Contact</p>
-          <h2>Tell us what you want your farm to track.</h2>
-          <p class="section-text">
-            Send the farm name, location, and the system you want to monitor:
-            irrigation, pumps, fridges, power usage, equipment runtime, remote
-            sites, or another part of the operation.
-          </p>
-        </div>
-
-        <div class="contact-layout">
-          <div class="contact-card">
-            <h3>North Valley Monitoring</h3>
-            <p><strong>Email:</strong> kyle@nvmonitoring.com</p>
-            <p><strong>Phone:</strong> 530-483-8139</p>
-            <p><strong>Service Area:</strong> Butte, Glenn, and Tehama Counties</p>
-            <p>
-              Custom smart farm systems for growers who want useful field data,
-              clear alerts, and local support.
-            </p>
-          </div>
-
-          <form id="contactForm" class="contact-form">
-            <label for="name">Name</label>
-            <input id="name" name="name" type="text" required />
-
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" required />
-
-            <label for="comment">Farm Details / Project Information</label>
-            <textarea id="comment" name="comment" rows="5" required></textarea>
-
-            <button type="submit" class="button">Send Request</button>
-            <p class="form-note" id="formNote" hidden></p>
-          </form>
+        <div class="cards contact-tiles">
+          <article class="card">
+            <p class="card-index">Email</p>
+            <h3>kyle@nvmonitoring.com</h3>
+            <p>Send project questions and service requests here.</p>
+          </article>
+          <article class="card">
+            <p class="card-index">Phone</p>
+            <h3>530-483-8139</h3>
+            <p>Call or text for North Valley Monitoring.</p>
+          </article>
+          <article class="card">
+            <p class="card-index">Service Area</p>
+            <h3>Butte, Glenn, and Tehama Counties</h3>
+            <p>Local support for growers and property owners.</p>
+          </article>
         </div>
       </section>
     </main>
-
-    <footer class="footer">
-      <div class="container footer-content">
-        <p>© <span id="year"></span> North Valley Monitoring</p>
-        <a href="#top">Back to top</a>
-      </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-    <script src="script.js?v=5"></script>
   </body>
 </html>

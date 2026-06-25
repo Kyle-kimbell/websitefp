@@ -169,6 +169,26 @@ a {
   padding-bottom: 56px;
 }
 
+.home-simple {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.simple-hero {
+  padding-bottom: 0;
+}
+
+.simple-main {
+  display: flex;
+  flex: 1;
+  align-items: flex-end;
+}
+
+.contact-tiles {
+  width: 100%;
+}
+
 .hero-backdrop {
   position: absolute;
   inset: 0;
