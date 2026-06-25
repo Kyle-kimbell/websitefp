@@ -189,6 +189,11 @@ a {
   width: 100%;
 }
 
+.contact-form-simple {
+  width: min(760px, 100%);
+  margin: 28px auto 0;
+}
+
 .hero-backdrop {
   position: absolute;
   inset: 0;

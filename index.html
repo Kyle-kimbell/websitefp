@@ -27,8 +27,6 @@
         <a class="brand" href="#top">North Valley Monitoring</a>
         <div class="nav-links">
           <a href="mission.html">MISSION</a>
-          <a href="our-story.html">OUR STORY</a>
-          <a href="hardware.html">HARDWARE</a>
           <a href="#contact">Contact</a>
         </div>
       </nav>
@@ -53,7 +51,24 @@
             <p>Local support for growers and property owners.</p>
           </article>
         </div>
+
+        <form id="contactForm" class="contact-form contact-form-simple">
+          <label for="name">Name</label>
+          <input id="name" name="name" type="text" autocomplete="name" required />
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" autocomplete="email" required />
+
+          <label for="comment">Message</label>
+          <textarea id="comment" name="comment" rows="5" required></textarea>
+
+          <button type="submit" class="button">Send Message</button>
+          <p class="form-note" id="formNote" hidden></p>
+        </form>
       </section>
     </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js?v=6"></script>
   </body>
 </html>

@@ -2,12 +2,13 @@ const yearEl = document.getElementById("year");
 const form = document.getElementById("contactForm");
 const note = document.getElementById("formNote");
 
-// Initialize EmailJS
-if (typeof emailjs !== 'undefined') {
+const contactRecipient = "kyle@nvmonitoring.com";
+
+// Initialize EmailJS.
+if (typeof emailjs !== "undefined") {
   emailjs.init({
     publicKey: "sOWGwjXh12B1as_J9",
   });
-  console.log("EmailJS Initialized with Public Key: sOWGwjXh12B1as_J9");
 }
 
 if (yearEl) {
@@ -28,6 +29,16 @@ if (form) {
     const projectDetails = form.comment.value.trim();
     const button = form.querySelector('button[type="submit"]');
 
+    if (typeof emailjs === "undefined") {
+      if (note) {
+        note.hidden = false;
+        note.textContent = "The contact form could not load. Please email kyle@nvmonitoring.com directly.";
+        note.style.color = "#d9534f";
+        note.style.fontWeight = "bold";
+      }
+      return;
+    }
+
     if (button) {
       button.disabled = true;
       button.textContent = "Sending...";
@@ -47,12 +58,12 @@ if (form) {
       from_name: name,
       from_email: email,
       reply_to: email,
+      to_email: contactRecipient,
       message: projectDetails,
     };
 
-    emailjs.send('service_j8jea57', 'template_w84xphk', templateParams)
+    emailjs.send("service_j8jea57", "template_w84xphk", templateParams)
       .then(() => {
-        console.log('SUCCESS!');
         if (button) {
            button.textContent = "Sent!";
            button.style.backgroundColor = "#47b296";
